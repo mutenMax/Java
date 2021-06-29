@@ -1,0 +1,15 @@
+<html xmlns:th="https://thymeleaf.org">
+<body>
+<h1>File Upload Form</h1>
+
+<form method="POST" action="zip-download" modelAttribute="uploadFiles" enctype="multipart/form-data">
+    <input type="file" required="true" name="files" />
+    <br><br>
+    <input type="file" name="files" required="true" />
+    <br><br>
+    <input type="submit" value="Submit" />
+</form>
+<h4 th:text="${message}"/>
+<hr />
+</body>
+</html>
