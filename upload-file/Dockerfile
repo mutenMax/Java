@@ -1,4 +1,8 @@
-FROM openjdk:8
+FROM maven:3.8.1-jdk-8
 EXPOSE 8080
-ADD target/upload-file.jar upload-file.jar
-ENTRYPOINT ["java", "-jar", "upload-file.jar"]
+RUN mkdir -p /usr/local/upload-file
+COPY . /usr/local/upload-file
+
+WORKDIR /usr/local/upload-file
+RUN mvn clean install
+ENTRYPOINT ["java", "-jar", "./target/upload-file.jar"]
