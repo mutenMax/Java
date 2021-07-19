@@ -1,3 +1,5 @@
+##  Instructions to run the app
+
 ######  Prerequisite
  - Docker
  
